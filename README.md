@@ -1,4 +1,4 @@
-# Luminate OS Web Design Repository
+# Luminate OS Web Design Repositorya
 
 Welcome to the Luminate OS Web Design repository. This project contains the code and resources for the website of Luminate Operating System (OS).
 

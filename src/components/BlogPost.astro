@@ -27,9 +27,8 @@ const { title, author, authorURL, publishDate, heroImage, alt } = Astro.props as
 	</article>
 </div> -->
 
-<div class="layout">
-	<article class="prose">
-		<div>
+<div class="md:container md:mx-0 m-5">
+	<article class="prose lg:prose-lg max-w-none">
 			<header class="my-10">
 				{heroImage && <img loading="lazy" src={heroImage} alt={alt} />}
 				<p>{publishDate}</p>
@@ -39,6 +38,5 @@ const { title, author, authorURL, publishDate, heroImage, alt } = Astro.props as
 			<main>
 				<slot />
 			</main>
-		</div>
 	</article>
 </div>

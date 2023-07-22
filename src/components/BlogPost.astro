@@ -11,22 +11,6 @@ export interface Props {
 const { title, author, authorURL, publishDate, heroImage, alt } = Astro.props as Props;
 ---
 
-<!-- <div class="layout">
-	<article class="content mx-5 md:mx-auto md:container">
-		<div>
-			<header class="my-10">
-				{heroImage && <img class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
-				<p class="text-sm">{publishDate}</p>
-				<h1 class="text-3xl font-bold">{title}</h1>
-				<a class="text-sm" href={authorURL}>Written by {author}</a>
-			</header>
-			<main class="prose lg:prose-xl">
-				<slot />
-			</main>
-		</div>
-	</article>
-</div> -->
-
 <div class="md:container md:mx-0 m-5">
 	<article class="prose lg:prose-lg max-w-none">
 			<header class="my-10">

@@ -1,0 +1,44 @@
+---
+export interface Props {
+	title: string;
+	author: string;
+	authorURL: string;
+	publishDate: string;
+	heroImage: string;
+	alt: string;
+}
+
+const { title, author, authorURL, publishDate, heroImage, alt } = Astro.props as Props;
+---
+
+<!-- <div class="layout">
+	<article class="content mx-5 md:mx-auto md:container">
+		<div>
+			<header class="my-10">
+				{heroImage && <img class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
+				<p class="text-sm">{publishDate}</p>
+				<h1 class="text-3xl font-bold">{title}</h1>
+				<a class="text-sm" href={authorURL}>Written by {author}</a>
+			</header>
+			<main class="prose lg:prose-xl">
+				<slot />
+			</main>
+		</div>
+	</article>
+</div> -->
+
+<div class="layout">
+	<article class="prose">
+		<div>
+			<header class="my-10">
+				{heroImage && <img loading="lazy" src={heroImage} alt={alt} />}
+				<p>{publishDate}</p>
+				<h1>{title}</h1>
+				<a href={authorURL}>Written by {author}</a>
+			</header>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</article>
+</div>

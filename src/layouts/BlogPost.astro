@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogPost from '../components/BlogPost.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const { content } = Astro.props;
+const { title, description, publishDate, author, authorURL, heroImage, permalink, alt } = content;
+
+import "../base.css"
+---
+
+<html lang={content.lang || 'en'}>
+	<head>
+		<BaseHead {title} {description} {permalink} />
+	</head>
+
+	<body class="bg-background">
+		<Navbar />
+		<div class="md:mx-auto md:container">
+			<BlogPost {title} {author} {authorURL} {heroImage} {publishDate} {alt}>
+				<slot />
+			</BlogPost>
+		</div>
+        <Footer></Footer>
+	</body>
+</html>

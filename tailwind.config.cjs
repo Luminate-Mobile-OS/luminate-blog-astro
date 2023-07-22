@@ -8,5 +8,8 @@ module.exports = {
 			background: "#F0D9FF",
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+		// ...
+	  ],
 }

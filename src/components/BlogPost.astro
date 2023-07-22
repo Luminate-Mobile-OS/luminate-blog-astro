@@ -1,26 +1,35 @@
 ---
 export interface Props {
-	title: string;
-	author: string;
-	authorURL: string;
-	publishDate: string;
-	heroImage: string;
-	alt: string;
+  title: string;
+  author: string;
+  authorURL: string;
+  publishDate: string;
+  heroImage: string;
+  alt: string;
 }
 
-const { title, author, authorURL, publishDate, heroImage, alt } = Astro.props as Props;
+const { title, author, authorURL, publishDate, heroImage, alt } =
+  Astro.props as Props;
 ---
 
 <div class="md:container md:mx-0 m-5">
-	<article class="prose lg:prose-lg max-w-none">
-			<header class="my-10">
-				{heroImage && <img loading="lazy" src={heroImage} alt={alt} />}
-				<p>{publishDate}</p>
-				<h1>{title}</h1>
-				<a href={authorURL}>Written by {author}</a>
-			</header>
-			<main>
-				<slot />
-			</main>
-	</article>
+  <article class="prose lg:prose-lg max-w-full">
+    <header class="my-10">
+      {heroImage && <img loading="lazy" src={heroImage} alt={alt} />}
+      <p>{publishDate}</p>
+      <h1>{title}</h1>
+      <a href={authorURL}>Written by {author}</a>
+    </header>
+    <main class="mb-40">
+      <slot />
+    </main>
+    <script
+      src="https://utteranc.es/client.js"
+      repo="LucasoDevDotTk/website-luminate-personal"
+      issue-term="url"
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </article>
 </div>

@@ -4,12 +4,13 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+
 ---
 
 <article class="my-5 bg-[#FFFFFF]/40 p-5 rounded-xl">
 	<header>
 		<p class="text-sm my-1">{post.frontmatter.publishDate}</p>
-		<a class="text-3xl font-bold my-1 hover:underline" href={post.url}><h1>{post.frontmatter.title}</h1></a>
+		<a class="text-3xl font-bold my-1 hover:underline flex" href={post.url}><h1>{post.frontmatter.title}</h1></a>
 	</header>
 	<p class="my-1">{post.frontmatter.description}</p>
 	<a class="hover:underline" href={post.url}>Read more</a>

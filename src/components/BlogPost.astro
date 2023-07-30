@@ -8,19 +8,20 @@ export interface Props {
   alt: string;
 }
 
-const { title, author, authorURL, publishDate, heroImage, alt } =
+const { title, author, authorURL, publishDate, category } =
   Astro.props as Props;
+
 ---
 
-<div class="md:container md:mx-0 m-5">
-  <article class="prose lg:prose-lg max-w-full">
+<div class="md:container md:mx-0 p-5">
+  <articles>
     <header class="my-10">
-      {heroImage && <img loading="lazy" src={heroImage} alt={alt} />}
-      <p>{publishDate}</p>
-      <h1>{title}</h1>
-      <a href={authorURL}>Written by {author}</a>
+      <div class="flex text-sm my-5">
+        <p><a class="hover:underline" href={authorURL}>{ author }</a> · { publishDate } · <span class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ category }</span></p>
+      </div>
     </header>
-    <main class="mb-40">
+    <main class="mb-40 prose prose-lg max-w-full">
+      <h1>{title}</h1>
       <slot />
     </main>
     <script

@@ -7,11 +7,15 @@ const { post } = Astro.props;
 
 ---
 
-<article class="my-5 bg-[#FFFFFF]/40 p-5 rounded-xl">
+<article class="my-5 p-5 rounded-xl">
 	<header>
-		<p class="text-sm my-1">{post.frontmatter.publishDate}</p>
-		<a class="text-3xl font-bold my-1 hover:underline flex" href={post.url}><h1>{post.frontmatter.title}</h1></a>
+		<div class="flex text-sm">
+			<p><a href={post.frontmatter.authorURL}>{ post.frontmatter.author }</a> · { post.frontmatter.publishDate } · <span class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ post.frontmatter.category }</span></p>
+		</div>
+
+		<a class="text-2xl font-bold my-2 hover:underline flex" href={post.url}><h1>{post.frontmatter.title}</h1></a>
+
 	</header>
 	<p class="my-1">{post.frontmatter.description}</p>
-	<a class="hover:underline" href={post.url}>Read more</a>
+	<hr class="text-grey mt-5">
 </article>

@@ -18,7 +18,7 @@ import "../base.css"
 	<body class="bg-background font-poppins">
 		<div class="w-full h-full bg-[url('../blob.svg')] bg-contain bg-no-repeat" style="background-size: 125rem;">
 			<Navbar />
-			<div class="md:mx-auto md:container">
+			<div class="md:mx-auto md:container min-h-screen">
 				<BlogPost {title} {author} {authorURL} {heroImage} {publishDate} {alt} {category}>
 					<slot />
 				</BlogPost>

@@ -2,7 +2,7 @@
 ---
 
 
-<nav class="md:container md:mx-auto block bg-[#FFFFFF]/40 rounded-[100rem] m-5">
+<nav class="md:container md:mx-auto sticky top-5 bg-[#FFFFFF]/80 rounded-[100rem] m-5 backdrop-blur-sm">
   <div class="flex h-full w-full pt-5 md:py-5">
     <a href="https://luminateos.com" class="flex items-center mx-auto md:mx-0">
         <img class="h-10 mx-5" src="/LuminateLogo.svg" alt="" />
@@ -14,14 +14,16 @@
     </div>
   </div>
 
-  <div class="menu md:hidden bg-background">
-    <a href="https://luminateos.com" class="flex justify-center">
-        <img class="h-16 mx-5" src="/LuminateLogo.svg" alt="" />
-    </a>
-    <div class="block text-xl text-secondary space-y-5">
-      <a class="hover:font-bold menuItem" href="">Features</a> <br>
-      <a class="hover:font-bold menuItem" href="">About</a> <br>
-      <a class="hover:font-bold menuItem" href="/">Blog</a> <br>
+  <div class="menu flex md:hidden bg-background h-screen w-screen items-center justify-center -m-5">
+    <div class="block">
+      <a href="https://luminateos.com" class="flex justify-center">
+          <img class="h-16 mx-5" src="/LuminateLogo.svg" alt="" />
+      </a>
+      <div class="block text-xl text-[#000000] space-y-5">
+        <a class="hover:font-bold menuItem" href="">Features</a> <br>
+        <a class="hover:font-bold menuItem" href="">About</a> <br>
+        <a class="hover:font-bold menuItem" href="/">Blog</a> <br>
+      </div>
     </div>
   </div>
 
@@ -84,9 +86,7 @@
   right: 0;
   bottom: 0;
   z-index: 99;
-  color: white;
   list-style: none;
-  padding-top: 40vh;
   text-align: center;
 }
 

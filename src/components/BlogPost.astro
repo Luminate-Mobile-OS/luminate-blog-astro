@@ -20,7 +20,7 @@ const { title, author, authorURL, publishDate, category } =
         <p><a class="hover:underline" href={authorURL}>{ author }</a> · { publishDate } · <span class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ category }</span></p>
       </div>
     </header>
-    <main class="mb-40 prose prose-img:rounded-md max-w-full">
+    <main class="mb-40 prose prose-img:rounded-md max-w-screen overflow-hidden text-ellipsis">
       <h1>{title}</h1>
       <slot />
     </main>

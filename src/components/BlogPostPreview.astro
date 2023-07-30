@@ -7,24 +7,25 @@ const { post } = Astro.props;
 
 ---
 
-<article class="my-5 w-80 ">
-	<img class="aspect-video object-cover rounded-t-xl" src={post.frontmatter.thumbnail} alt="">
-	<div class="p-5 rounded-b-xl flex bg-[#FFFFFF]/80 h-72">
-		<div class="block w-full">
-			<header>
-				<div class="flex text-sm">
-					<p><a href={post.frontmatter.authorURL}>{ post.frontmatter.author }</a> · { post.frontmatter.publishDate } · <span class="bg-background p-1 px-2 rounded-full">{ post.frontmatter.category }</span></p>
+<article class="my-5 w-80 mx-5">
+	<a href={post.url}>
+		<img class="aspect-video object-cover rounded-t-xl" src={post.frontmatter.thumbnail} alt="">
+		<div class="p-5 rounded-b-xl flex bg-[#FFFFFF]/80 h-72">
+			<div class="block w-full">
+				<header>
+					<div class="flex text-sm">
+						<p><a href={post.frontmatter.authorURL}>{ post.frontmatter.author }</a> · { post.frontmatter.publishDate } · <span class="bg-background p-1 px-2 rounded-full">{ post.frontmatter.category }</span></p>
+					</div>
+
+					<a class="text-2xl font-bold my-2 hover:underline flex" href={post.url}><h1>{post.frontmatter.title}</h1></a>
+
+				</header>
+				<div class="h-32 text-ellipsis overflow-hidden">
+					<p class="overflow-hidden line-clamp-5 text-sm" class="my-1 text-grey">{post.frontmatter.description}</p>
 				</div>
 
-				<a class="text-2xl font-bold my-2 hover:underline flex" href={post.url}><h1>{post.frontmatter.title}</h1></a>
-
-			</header>
-			<div class="h-32 text-ellipsis overflow-hidden">
-				<p class="overflow-hidden line-clamp-5 text-sm" class="my-1 text-grey">{post.frontmatter.description}</p>
-			</div>
-			<div style="background: -webkit-linear-gradient(10deg, #c81aff, #ce82ff);" class="bg-[#c81aff] text-center text-[#FFFFFF] font-light p-2 rounded-md">
-				<a class="bottom-0" href={post.url}>Read more</a>
+				<a style="background: -webkit-linear-gradient(10deg, #c81aff, #ce82ff);" class="p-2 rounded-md text-center text-[#FFFFFF] font-light block" href={post.url}>Read more</a>
 			</div>
 		</div>
-	</div>
+	</a>
 </article>

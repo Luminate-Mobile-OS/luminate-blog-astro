@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogPost from '../components/BlogPost.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const { content } = Astro.props;
+const { title, description, publishDate, author, authorURL, heroImage, permalink, alt, category } = content;
+
+import "../base.css"
+---
+
+<html lang={content.lang || 'en'}>
+	<head>
+		<BaseHead {title} {description} {permalink} />
+	</head>
+
+	<body class="bg-background font-poppins">
+		<div class="w-full h-full bg-[url('../blob.svg')] bg-contain bg-no-repeat" style="background-size: 125rem;">
+			<Navbar />
+			<div class="md:mx-auto md:container">
+				<BlogPost {title} {author} {authorURL} {heroImage} {publishDate} {alt} {category}>
+					<slot />
+				</BlogPost>
+			</div>
+			<Footer></Footer>
+		</div>
+	</body>
+</html>

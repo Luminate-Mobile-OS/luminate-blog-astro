@@ -1,3 +1,18 @@
+---
+title: Test blog
+publishDate: 22 Jul 2023
+author: Lucas Nguyen
+authorURL: https://GOOGLE.COM
+description: This is just a test
+layout: ../../layouts/BlogPost.astro
+---
+BLALALALALALA
+
+
+
+`this is using NetlifyCMS`
+
+```json
 {
   "name": "s",
   "type": "module",
@@ -20,3 +35,18 @@
     "@tailwindcss/typography": "^0.5.9"
   }
 }
+```
+
+1. hi
+2. hi2
+3. hi3
+
+> This is a quote
+
+*akjdslksd*
+
+
+
+***BOLD***
+
+# **H5**

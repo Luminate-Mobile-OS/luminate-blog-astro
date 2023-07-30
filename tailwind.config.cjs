@@ -6,7 +6,11 @@ module.exports = {
 			primary: "#CE84FF",
 			secondary: "#46005B",
 			background: "#F0D9FF",
+			grey: "#484848",
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+		// ...
+	  ],
 }

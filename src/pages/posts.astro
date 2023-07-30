@@ -12,7 +12,6 @@ let permalink = 'https://blog.luminateos.com';
 let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
-
 import "../base.css"
 
 ---
@@ -22,28 +21,22 @@ import "../base.css"
 		<BaseHead {title} {description} {permalink} />
 	</head>
 
-	<body class="bg-background font-poppins">
-		<div class="w-full h-full bg-[url('../blob.svg')] bg-contain bg-no-repeat" style="background-size: 125rem;">
+	<body class="bg-background">
 		<Navbar />
-		<div class="md:container md:mx-auto min-h-screen p-5">
+		<div class="md:container md:mx-auto min-h-screen m-5">
 			<main>
-				<!-- <section class="my-20">
+				<section>
 					<h1 class="font-bold text-4xl text-center">{title}</h1>
 					<p class="my-5 text-center">{description}</p>
-				</section> -->
-				<section class="overflow-hidden" aria-label="Blog post list">
+				</section>
+				<section aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>
 			<footer>
-			<!-- <a class="hover:underline block text-center" href="/admin">Admin Dashboard 🔐</a> -->
+			<a class="hover:underline block text-center" href="/admin">Admin Dashboard 🔐</a>
 			</footer>
 		</div>
 		<Footer></Footer>
-		</div>
 	</body>
 </html>
-
-<script>
-	// alert("This blog is still in development. Press OK to continue.")
-</script>

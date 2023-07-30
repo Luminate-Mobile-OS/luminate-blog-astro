@@ -2,15 +2,95 @@
 ---
 
 
-<nav class="block bg-[#FFFFFF]/40 h-16 rounded-3xl m-10">
-  <div class="flex h-full w-full">
-    <div class="flex items-center">
-        <img class="h-10 mx-5" src="./LuminateLogo.svg" alt="" />
-    </div>
-    <div class="ml-auto flex items-center mr-10">
+<nav class="md:container md:mx-auto block bg-[#FFFFFF]/40 rounded-[100rem] m-5">
+  <div class="flex h-full w-full pt-5 md:py-5">
+    <a href="https://luminateos.com" class="flex items-center mx-auto md:mx-0">
+        <img class="h-10 mx-5" src="/LuminateLogo.svg" alt="" />
+    </a>
+    <div class="hidden md:flex ml-auto items-center mr-10">
       <a class="mx-5 hover:font-bold" href="">Features</a>
       <a class="mx-5 hover:font-bold" href="">About</a>
-      <a class="mx-5 hover:font-bold" href="">Blog</a>
+      <a class="mx-5 hover:font-bold" href="/">Blog</a>
     </div>
   </div>
+
+  <div class="menu md:hidden bg-background">
+    <a href="https://luminateos.com" class="flex justify-center">
+        <img class="h-16 mx-5" src="/LuminateLogo.svg" alt="" />
+    </a>
+    <div class="block text-xl text-secondary space-y-5">
+      <a class="hover:font-bold menuItem" href="">Features</a> <br>
+      <a class="hover:font-bold menuItem" href="">About</a> <br>
+      <a class="hover:font-bold menuItem" href="/">Blog</a> <br>
+    </div>
+  </div>
+
+  <div>
+    <button
+      class="flex mx-auto text-4xl justify-center md:hidden text-white hamburger pb-5"
+    >
+      <i class="menuIcon"
+        ><img src="/menu_FILL0_wght400_GRAD0_opsz48 1.svg" /></i
+      >
+      <i class="closeIcon"
+        ><img src="/close_FILL0_wght400_GRAD0_opsz48 1.svg" /></i
+      >
+    </button>
+    </div>
 </nav>
+
+<script>
+  const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menuItem");
+  const hamburger = document.querySelector(".hamburger");
+  const closeIcon = document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
+
+  function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
+  }
+
+  hamburger.addEventListener("click", toggleMenu);
+
+</script>
+
+
+<style>
+  .hamburger {
+  position:relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.closeIcon {
+  display: none;
+  position: fixed;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-500%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  color: white;
+  list-style: none;
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+</style>

@@ -31,7 +31,7 @@ import "../base.css"
 					<h1 class="font-bold text-4xl text-center">{title}</h1>
 					<p class="my-5 text-center">{description}</p>
 				</section> -->
-				<section class="overflow-hidden flex flex-wrap justify-center sm:justify-normal" aria-label="Blog post list">
+				<section class="overflow-hidden flex flex-wrap justify-center" aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>

@@ -1,6 +1,6 @@
 ---
 title: Discord Server
-publishDate: Jul 30, 2023
+publishDate: Jul 31, 2023
 author: Someone Lastname
 authorURL: ""
 category: Press release

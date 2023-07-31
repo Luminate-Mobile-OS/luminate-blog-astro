@@ -1,8 +1,9 @@
 ---
-title: test
-publishDate: Jul 30, 2023
-author: test
-category: test
+title: Kotlin Developers
+publishDate: Jul 31, 2023
+author: Amelia Lewis
+authorURL: ""
+category: Jobs
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
   veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -14,14 +15,10 @@ layout: ../../layouts/BlogPost.astro
 ---
 **testtesttesttesttesttest**
 
+![](/assets/blog/stories.png)
 
+<!--StartFragment-->
 
+The orchestra tuned their instruments, and the theater buzzed with excitement as the lights dimmed. The conductor raised his baton, and the musicians breathed as one, creating a symphony that stirred the soul. The melodies swirled and soared, carrying the audience on an emotional journey through time and space. Music, the universal language, transcended boundaries and united hearts.
 
-
-* # testtesttesttesttesttest
-
-  ![](/assets/blog/stories.png)
-
-
-
-*testtesttesttesttesttest*
+<!--EndFragment-->

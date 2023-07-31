@@ -1,6 +1,6 @@
 ---
 title: Update on progress
-publishDate: Jul 30, 2023
+publishDate: Jul 31, 2023
 author: Testname Lastname
 category: Press release
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

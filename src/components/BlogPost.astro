@@ -22,7 +22,7 @@ let categoryLink = "/categories/" + category.toLowerCase().replace(" ", "-");
       <p><a class="hover:underline" href={authorURL}>{ author }</a> · { publishDate } · <a href={categoryLink} class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ category }</a></p>
       </div>
     </header>
-    <main class="mb-40 prose prose-img:rounded-md max-w-screen overflow-hidden text-ellipsis">
+    <main class="mb-40 prose prose-img:rounded-lg container max-w-none overflow-hidden text-ellipsis">
       <img class="aspect-video object-cover" src={thumbnail} alt="">
       <h1>{title}</h1>
       <!-- <img class="aspect-video" src={thumbnail} alt=""> -->

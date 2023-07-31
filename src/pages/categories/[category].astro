@@ -1,0 +1,90 @@
+---
+import BlogPostPreview from '../../components/BlogPostPreview.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import "../../base.css";
+
+export async function getAllPosts() {
+    let allPosts = await Astro.glob("../posts/*.md");
+    allPosts = allPosts.sort(
+    (a, b) =>
+        new Date(b.frontmatter.publishDate).valueOf() -
+        new Date(a.frontmatter.publishDate).valueOf()
+    );
+
+    return allPosts;
+}
+
+export async function getCategories(allPosts) {
+
+    // Loop through all the posts and make a list of all categories
+    let categoriesList = [];
+
+    allPosts.forEach((post) => {
+        let category: string = post.frontmatter.category;
+        if (!categoriesList.includes(category)) {
+            categoriesList.push(category.split(' ').join('-').toLowerCase());
+        }
+    });
+
+    return categoriesList;
+}
+
+export async function makeParams(categoriesList) {
+    let paramsList = [];
+    categoriesList.forEach((category) => {
+        let param = { params: { category: category } };
+        paramsList.push(param);
+    });
+
+    return paramsList;
+}
+
+export async function getStaticPaths() {
+    let allPosts = await getAllPosts();
+    let categoriesList = await getCategories(allPosts);
+    let paramsList = await makeParams(categoriesList);
+
+    return paramsList;
+}
+
+const { category } = Astro.params;
+
+let allPosts = await getAllPosts();
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+let postsByCategory = [];
+
+allPosts.forEach((post) => {
+    if (post.frontmatter.category.split(' ').join('-').toLowerCase() === category) {
+        postsByCategory.push(post);
+    }
+});
+
+let title = category.split('-').join(' ').toUpperCase();
+// console.log(postsByCategory);
+console.log(category);
+// console.log(allPosts);
+console.log(postsByCategory);
+
+---
+<html>
+    <head>
+        <BaseHead {title} {} {} />
+    </head>
+    <body class="bg-background font-poppins">
+        <Navbar />
+        <div class="md:container md:mx-auto min-h-screen">
+            <section>
+                <h1 class="text-center text-8xl p-20 font-extrabold">{title}S</h1>
+            </section>
+            <main>
+                <section class="overflow-hidden flex flex-wrap justify-center" aria-label="Blog post list">
+                    {postsByCategory.map((p) => <BlogPostPreview post={p}/>)}
+                </section>
+            </main>
+        </div>
+        <Footer></Footer>
+    </body>
+</html>

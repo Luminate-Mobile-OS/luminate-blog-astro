@@ -29,14 +29,11 @@ import "../base.css"
 			<section>
 				<h1 class="text-center text-8xl p-20 font-extrabold">BLOG</h1>
 			</section>
-			<main>
+			<main class="flex">
 				<section class="overflow-hidden flex flex-wrap justify-center" aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>
-			<footer>
-			<!-- <a class="hover:underline block text-center" href="/admin">Admin Dashboard 🔐</a> -->
-			</footer>
 		</div>
 		<Footer></Footer>
 		</div>

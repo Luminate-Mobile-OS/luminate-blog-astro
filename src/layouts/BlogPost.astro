@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 const { content } = Astro.props;
-const { title, description, publishDate, author, authorURL, heroImage, permalink, alt, category } = content;
+const { title, description, publishDate, author, authorURL, thumbnail, permalink, alt, category } = content;
 
 import "../base.css"
 ---
@@ -19,7 +19,7 @@ import "../base.css"
 		<div class="w-full h-full bg-[url('../blob.svg')] bg-contain bg-no-repeat" style="background-size: 125rem;">
 			<Navbar />
 			<div class="md:mx-auto md:container min-h-screen">
-				<BlogPost {title} {author} {authorURL} {heroImage} {publishDate} {alt} {category}>
+				<BlogPost {title} {author} {authorURL} {thumbnail} {publishDate} {alt} {category}>
 					<slot />
 				</BlogPost>
 			</div>

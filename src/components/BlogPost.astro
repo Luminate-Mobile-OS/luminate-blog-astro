@@ -4,24 +4,28 @@ export interface Props {
   author: string;
   authorURL: string;
   publishDate: string;
-  heroImage: string;
+  thumbnail: string;
+  category: string;
   alt: string;
 }
 
-const { title, author, authorURL, publishDate, category } =
+const { title, author, authorURL, publishDate, category, thumbnail } =
   Astro.props as Props;
 
+let categoryLink = "/categories/" + category.toLowerCase().replace(" ", "-");
 ---
 
 <div class="md:container md:mx-0 p-5">
   <articles>
-    <header class="my-10">
+    <header class="my-5">
       <div class="flex text-sm my-5">
-        <p><a class="hover:underline" href={authorURL}>{ author }</a> · { publishDate } · <span class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ category }</span></p>
+      <p><a class="hover:underline" href={authorURL}>{ author }</a> · { publishDate } · <a href={categoryLink} class="bg-[#FFFFFF]/40 p-1 px-2 rounded-full">{ category }</a></p>
       </div>
     </header>
-    <main class="mb-40 prose prose-lg max-w-full">
+    <main class="mb-40 prose prose-img:rounded-lg container max-w-none overflow-hidden text-ellipsis">
+      <img class="aspect-video object-cover" src={thumbnail} alt="">
       <h1>{title}</h1>
+      <!-- <img class="aspect-video" src={thumbnail} alt=""> -->
       <slot />
     </main>
     <!-- <script

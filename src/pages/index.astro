@@ -25,19 +25,15 @@ import "../base.css"
 	<body class="bg-background font-poppins">
 		<div class="w-full h-full bg-[url('../blob.svg')] bg-contain bg-no-repeat" style="background-size: 125rem;">
 		<Navbar />
-		<div class="md:container md:mx-auto min-h-screen p-5">
-			<main>
-				<!-- <section class="my-20">
-					<h1 class="font-bold text-4xl text-center">{title}</h1>
-					<p class="my-5 text-center">{description}</p>
-				</section> -->
-				<section class="overflow-hidden" aria-label="Blog post list">
+		<div class="md:container md:mx-auto min-h-screen">
+			<section>
+				<h1 class="text-center text-6xl sm:text-7xl py-20 font-extrabold">BLOG</h1>
+			</section>
+			<main class="flex">
+				<section class="overflow-hidden flex flex-wrap justify-center" aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>
-			<footer>
-			<!-- <a class="hover:underline block text-center" href="/admin">Admin Dashboard 🔐</a> -->
-			</footer>
 		</div>
 		<Footer></Footer>
 		</div>

@@ -9,9 +9,13 @@ let title = "Luminate OS's Blog";
 let description = "Luminate OS' blog, where we post updates, tutorials, and more.";
 let permalink = 'https://blog.luminateos.com';
 
-let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
+// check if there is any .md files in the posts folder
+try {
+	var allPosts = await Astro.glob('./posts/*.md');
+	allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+} catch (e) {
+	var allPosts = [];
+}
 
 import "../base.css"
 

@@ -40,7 +40,7 @@ export default defineConfig({
             { name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
             { name: 'category', widget: 'string', label: 'Category', required: true },
             { name: 'description', widget: 'string', label: 'Description', required: true },
-            { name: 'thumbnail', widget: 'image', label: 'Thumbnail', required: true, default: '/assets/default-thumbnail.svg'},
+            { name: 'thumbnail', widget: 'image', label: 'Thumbnail', required: true, default: '/assets/blog/default-thumbnail.svg'},
             { name: 'body', widget: 'markdown', label: 'Post Body', required: true},
             {
               name: 'layout',
